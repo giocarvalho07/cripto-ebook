@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title> mentoriaT3ch </title>
+
+  <link rel="shortcut icon" href="img/logoRoxo.png">
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+
+  <link th:href="@{/css/styles.css}" href="css/styles.css" rel="stylesheet" />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Lobster&family=Open+Sans:wght@600&family=Ubuntu:ital,wght@1,500&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg" style="background-color:#14100D">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <img src="data:image/png;base64,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">
+      </div>
+      <div class="col">
+        <h1 class="text-danger"> criptofire </h1>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Page Content-->
+<div class="row" style="background-color:#14100D">
+  <!-- Heading Row-->
+  <div class="row gx-4 gx-lg-5 align-items-center my-5" >
+    <div class="col-lg-6 center">
+      <img class="img-fluid rounded mb-4 mb-lg-0" width="275" src="img/ebook.png" style="margin-left: 80px">
+    </div>
+    <div class="col-lg-4 center" style="margin: 15px">
+      <h2 class="font-weight-black text-danger"> Obrigado(a) </h2>
+      <h3 class="font-weight-light text-light"> Neste
+        <span class="text-danger" style="font-family: 'Courgette', cursive";> e-book gratuito  </span>
+      </h3>
+      <h3 class="font-weight-black text-light" > Você vai aprender tudo sobre criptoativos
+        <span class="text-danger" style="font-family: 'Courgette', cursive";>
+       #naPrática 💸
+      </span>
+      </h3>
+      <br>
+      <tr th:each="ebooks: ${ebook}"></tr>
+      <a href="img/17motivoscripto.pdf" download class="btn text-white" style="background-color: #dc3545!important;">
+        Faça o download agora!
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- Call to Action-->
+<div class="container my-5 py-4 text-center">
+  <div class="container">
+    <h1 class="font-weight-black" style="color:#14100D";> Obrigado por fazer o download </h1>
+    <h3 class="font-weight-light text-black"> Vou disponibilizar
+      <span class="text-danger" style="font-family: 'Courgette', cursive";> nosso canal no Instagram  </span>
+    </h3>
+    <h3 class="font-weight-black text-black" > gratuitos
+      <span class="text-danger" style="font-family: 'Courgette', cursive";>
+       #naPrática 💸
+      </span>
+    </h3>
+    <br>
+  </div>
+</div>
+
+
+
+<div class="container my-5 py-4 text-center">
+  <div class="row gx-4 gx-lg-5">
+
+    <div class="col-md-12 mb-5">
+      <div class="card h-100" style="background-color:#14100D";>
+        <div class="card-footer">
+          <h3 class="card-title text-danger"> Canal do Instagram </h3>
+        </div>
+        <div class="card-body">
+          <p class="card-text text-light">
+            Conteúdos gratuitos e muito mais todos os dias
+          </p>
+          <a target="_blank" href="https://www.instagram.com/criptofire_/" class="btn text-white" style="background-color: #dc3545!important;">
+            Acesse o canal do instagram
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Footer-->
+<footer class="py-5 bg-dark">
+  <div class="container px-4 px-lg-5">
+    <p class="m-0 text-center text-white">Copyright &copy; @criptofire </p>
+  </div>
+</footer>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+
+</html>
